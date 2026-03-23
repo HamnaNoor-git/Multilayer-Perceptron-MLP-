@@ -1,0 +1,294 @@
+\documentclass[runningheads]{llncs}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Multilayer Perceptron MVC Project}
+\author{Hamna Noor \\ 25I-3113}
+\institute{SE-D \\ FAST NUCES Islamabad}
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TASK 1
+%%% A %%%
+\section{Task 1: Forward Pass}
+
+\subsection{Task 1A: General Equations}
+\\
+%   Neuron h1:
+\textbf{Hidden Layer 1 - Equations:\\}
+
+\textbf{Neuron h1:}
+
+\[
+z_1^{(1)} = w_1 x_1 + w_3 x_2 + b^{(1)}
+\]
+
+\[
+a_1^{(1)} = \sigma(z_1^{(1)}) = \frac{1}{1 + e^{-z_1^{(1)}}}
+\]
+
+%   Neuron h2:
+\textbf{Neuron h2:}
+
+\[
+z_2^{(1)} = w_2 x_1 + w_4 x_2 + b^{(1)}
+\]
+
+\[
+a_2^{(1)} = \sigma(z_2^{(1)}) = \frac{1}{1 + e^{-z_2^{(1)}}}
+\]
+                        %%%%%%%%%%%%%%%%%%%%%%
+%   Neuron h3:
+\textbf{Hidden Layer 2 - Equations:\\}
+
+\textbf{Neuron h3:}
+
+\[
+z_1^{(2)} = w_5 a_1^{(1)} + w_7 a_2^{(1)} + b^{(2)}
+\]
+
+\[
+a_1^{(2)} = \sigma(z_3^{(2)}) = \frac{1}{1 + e^{-z_3^{(2)}}}
+\]
+
+%   Neuron h4:
+\textbf{Neuron h4:}
+
+\[
+z2^{(2)} = w_6 a_1^{(1)} + w_8 a_2^{(1)} + b^{(2)}
+\]
+
+\[
+a_2^{(2)} = \sigma(z_4^{(2)}) = \frac{1}{1 + e^{-z_4^{(2)}}}
+\]
+                        %%%%%%%%%%%%%%%%%%%%%%
+%   Output neuron yˆ:
+\textbf{Output Layer - Equation\\}
+
+\textbf{Output neuron $\hat{y}$:}
+
+\[
+z_1^{(3)} = w_9 a_1^{(2)} + w_{10}  a_2^{(2)} 
+\]
+
+\[
+\hat{y} = \sigma(z_1^{(3)}) = \frac{1}{1 + e^{-z_1^{(3)}}}
+\]
+\\
+
+
+%%% B %%%
+
+\subsection{Task 1B: Numerical Calculation for Sample s_1}
+\\
+\textbf{Step 1 - Hidden Layer 1:\\}
+
+\textbf{Neuron h1:}
+
+\[
+z_1^{(1)} = w_1 x_1 + w_3 x_2 + b^{(1)}
+\]
+
+\[
+z_1^{(1)} = 0.67(0.2) + 0.89(0.8) - 0.43 
+\]
+
+\[
+\mathbf{z_1^{(1)} = 0.416}
+\]
+
+\[
+a_1^{(1)} = \sigma(z_1^{(1)}) = \frac{1}{1 + e^{-z_1^{(1)}}}
+\]
+
+\[
+a_1^{(1)} = \sigma(0.416) = \frac{1}{1 + e^{-0.416}} 
+\]
+
+\[
+\mathbf{a_1^{(1)} = 0.6025}
+\]
+
+\textbf{Neuron h2:}
+\[
+z_2^{(1)} = w_2 x_1 + w_4 x_2 + b^{(1)}
+\]
+
+\[
+z_2^{(1)} = 0.60(0.2) + 0.60(0.8) - 0.43 
+\]
+
+\[
+\mathbf{z_2^{(1)} = 0.17}
+\]
+
+
+\[
+a_2^{(1)} = \sigma(z_2^{(1)}) = \frac{1}{1 + e^{-z_2^{(1)}}}
+\]
+
+\[
+a_2^{(1)} = \sigma(0.17) = \frac{1}{1 + e^{-0.17}} 
+\]
+
+\[
+\mathbf{a_2^{(1)} = 0.5424}
+\]
+
+                         %%%%%%%%%%%%%%%
+\textbf{Step 2 - Hidden Layer 2\\}
+
+\textbf{Neuron h3:}
+
+\[
+z_1^{(2)} = w_5 a_1^{(1)} + w_7 a_2^{(1)} + b^{(2)}
+\]
+
+\[
+z_1^{(2)} = -0.77(0.6025) - 0.21(0.5424) - 0.35 
+\]
+
+\[
+\mathbf{z_1^{(2)} = = -0.9278}
+\]
+
+\[
+a_1^{(2)} = \sigma(z_3^{(2)}) = \frac{1}{1 + e^{-z_3^{(2)}}}
+\]
+
+\[
+a_1^{(2)} = \sigma(-0.9278) = \frac{1}{1 + e^{-(-0.9278)}}
+\]
+
+\[
+\mathbf{a_1^{(2)} = 0.2833}
+\]
+
+\textbf{Neuron h4:}
+\[
+z2^{(2)} = w_6 a_1^{(1)} + w_8 a_2^{(1)} + b^{(2)}
+\]
+
+\[
+z_2^{(2)} = -0.88(0.6025) - 0.63(0.5424) - 0.35 
+\]
+
+\[
+\mathbf{z_2^{(2)} = -1.221}
+\]
+
+\[
+a_2^{(2)} = \sigma(z_4^{(2)}) = \frac{1}{1 + e^{-z_4^{(2)}}}
+\]
+
+\[
+a_2^{(2)} = \sigma(-1.221) = \frac{1}{1 + e^{-(-1.221)}} 
+\]
+
+\[
+\mathbf{a_2^{(2)} = 0.2276}
+\]
+
+
+                %%%%%%%%%%%%%%%%%
+                
+\textbf{Step 3 - Output Layer\\}
+\[
+z_1^{(3)} = w_9 a_1^{(2)} + w_{10}  a_2^{(2)} 
+\]
+
+\[
+z_1^{(3)} = 0.72(0.2833) - 0.1(0.2276) 
+\]
+
+\[
+\mathbf{z_1^{(3)} = 0.1812}
+\]
+
+\[
+\hat{y} = \sigma(z_1^{(3)}) = \frac{1}{1 + e^{-z_1^{(3)}}}
+\]
+
+\[
+\hat{y} = \sigma(z_1^{(3)}) = \frac{1}{1 + e^{-0.1812}}
+\]
+
+\[
+\mathbf{\hat{y} = 0.5451}
+\]
+
+\[
+\mathbf{y-\hat{y} = 0.4548}
+\]
+
+%%%% C %%%%%
+\subsection{Task 1C: Forward Pass for All Samples}
+\\
+\renewcommand{\arraystretch}{2}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Sample} & \textbf{$x_1$} & \textbf{$x_2$} & \textbf{$a_1^{(1)}$} & \textbf{$a_2^{(1)}$} & \textbf{$a_1^{(2)}$} & \textbf{$a_2^{(2)}$} & \textbf{$\hat{y}$} & \textbf{$y$} \\
+\hline
+$s^{(1)}$ & 0.2 & 0.8 & 0.6025 & 0.5424 & 0.2833 & 0.2276 & 0.5451 & 1\\
+\hline
+$s^{(2)}$ & 0.9 & 0.4 & 0.6304 & 0.5879 & 0.2723 & 0.2110 & 0.5442 & 1\\
+\hline
+$s^{(3)}$ & 0.1 & 0.2 & 0.4675 & 0.4626 & 0.2996 & 0.2523 & 0.5413 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+\textbf{Q1. Why do we apply the sigmoid activation function after computing the weighted sum? What would happen if we removed all activation functions?} 
+\\ \\
+The sigmoid activation function is used to convert the output into a value between 0 and 1. This helps in controlling the output and making it meaningful. If we remove the activation function, the network will only perform simple calculations 
+and will not be able to learn complex patterns. It will behave like a basic linear model.
+
+\vspace{0.5cm}
+
+\textbf{Q2. Look at your predictions yˆ for all three samples. Does your network currently make correct predictions? What does this tell you about randomly initialized weights?} 
+\\ \\
+The predictions for all samples are almost the same, so they are not correct. This shows that the network has not learned anything yet. Since the weights are randomly initialized, the network gives similar outputs for different inputs, which means it is not trained properly.
+
+\vspace{0.5cm}
+
+\textbf{Q3.The sigmoid function outputs values strictly between 0 and 1. Explain why this is useful for a binary classification problem.} 
+\\ \\
+The sigmoid function gives output between 0 and 1, which is useful for binary classification. It can be treated as a probability, where values closer to 1 represent one class and values closer to 0 represent the other class. This makes it easier to decide the final output using a threshold like 0.5.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TASK 2
+
+\section{Task 2: Loss Calculation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TASK 3
+
+\section{Task 3: Backpropagation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TASK 4
+
+\section{Task 4: Weight Update}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TASK 5 
+
+\section{Task 5: Mini-Batch Gradient Descent}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TASK 6
+
+\section{Task 6: Optimizers}
+
+
+\end{document}
