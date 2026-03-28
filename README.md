@@ -31,21 +31,6 @@ The model is trained on the MNIST dataset to classify handwritten digits (0–9)
 * The model achieves reasonable accuracy on the MNIST test dataset.
 * Predictions improve as training progresses.
 
-
-## ▶️ How to Run
-1. Install required libraries:
-
-   ```
-   pip install numpy matplotlib
-   ```
-
-2. Run the notebook:
-
-   * Open `mlp.ipynb` in Jupyter Notebook
-   * Execute all cells
-
----
-
 ## Output
 * Training loss curve
 * Test accuracy percentage
@@ -60,7 +45,7 @@ The model is trained on the MNIST dataset to classify handwritten digits (0–9)
 
 ---
 
-## 👤 Author
+##  Author
 Name: Hamna Noor
 Roll No: 25i-3113
 FAST NUCES, Islamabad
