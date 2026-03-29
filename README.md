@@ -31,19 +31,12 @@ The model is trained on the MNIST dataset to classify handwritten digits (0–9)
 * The model achieves reasonable accuracy on the MNIST test dataset.
 * Predictions improve as training progresses.
 
+
 ## Output
 * Training loss curve
 * Test accuracy percentage
 * Sample predictions on test images
 
----
-
-## Notes
-* All computations are implemented manually using NumPy.
-* No deep learning frameworks (e.g., PyTorch/TensorFlow) are used for training.
-* The implementation strictly follows the project tasks (Task 1–7).
-
----
 
 ##  Author
 Name: Hamna Noor
