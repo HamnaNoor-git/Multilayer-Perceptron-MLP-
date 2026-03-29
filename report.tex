@@ -1,0 +1,130 @@
+\documentclass[runningheads]{llncs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Implementation of a Multilayer Perceptron}
+\titlerunning{MLP Implementation}
+
+\author{Hamna Noor \\ 25I-3113}
+\institute{FAST NUCES, Islamabad}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This project presents the implementation of a Multilayer Perceptron (MLP) from scratch using NumPy. The main objective is to understand how neural networks work by manually implementing forward propagation, loss calculation, and backpropagation. The model is trained using mini-batch gradient descent on the MNIST dataset. The results show that the loss decreases over time that the model is able to classify handwritten digits with reasonable accuracy.
+\keywords{Neural Networks \and MLP \and MNIST \and Backpropagation \and Gradient Descent}
+\end{abstract}
+
+\section{Introduction}
+Neural networks are widely used in machine learning to solve classification problems. In this project, a Multilayer Perceptron (MLP) is implemented from scratch to understand its working.
+
+All calculations are done manually using NumPy, which helps in understanding how predictions are made and how the model improves during training.
+
+\section{Background}
+A Multilayer Perceptron consists of multiple layers of neurons. Each neuron computes a weighted sum of inputs and applies an activation function.
+
+The sigmoid activation function used is as follows:
+
+\[
+\sigma(z) = \frac{1}{1 + e^{-z}}
+\]
+
+The loss is calculated using the mean squared error (MSE):
+
+\[
+L = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2
+\]
+
+The weights are updated using gradient descent:
+
+\[
+w = w - \eta \frac{\partial L}{\partial w}
+\]
+
+Mini-batch gradient descent is used to improve efficiency.
+
+\section{Implementation}
+The model is implemented using Python and NumPy.
+
+\subsection{Network Architecture}
+The architecture is defined on the basis of\textbf{} the MNIST dataset and project instructions.
+
+\begin{itemize}
+\item Input layer: 784 neurons (28 $\times$ 28 image pixels)
+\item Hidden layer 1: 128 neurons
+\item Hidden layer 2: 64 neurons
+\item Output layer: 10 neurons (digits 0--9)
+\end{itemize}
+
+\subsection{Training Procedure}
+The following steps are performed:
+
+\begin{itemize}
+\item Forward propagation to compute outputs. In this step, inputs are passed through each layer using weights, biases, and activation functions to generate predictions.
+
+\item Loss calculation using Mean Squared Error (MSE).
+
+\item Backpropagation to compute gradients. The gradients of the loss function with respect to each weight are calculated and used to reduce the error.
+
+\item Weight updates using gradient descent. The weights are updated in the opposite direction of the gradient, and this process is repeated for multiple epochs to improve performance.
+\end{itemize}
+
+All operations are implemented using matrix multiplication.
+
+\section{Experiments}
+The MNIST dataset is used for training and testing.
+
+\subsection{Dataset}
+\begin{itemize}
+\item Training samples: 60,000
+\item Test samples: 10,000
+\item Image size: 28 $\times$ 28 pixels
+\end{itemize}
+
+\subsection{Hyperparameters}
+\begin{itemize}
+\item Learning rate: 0.1
+\item Batch size: 32
+\item Number of epochs: 10
+\end{itemize}
+
+\subsection{Results}
+The model shows improvement during training.
+
+\begin{itemize}
+\item Loss decreases after each epoch
+\item Accuracy improves gradually
+\item Predictions become more accurate
+\end{itemize}
+
+\textbf{Loss Curve:}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{loss.png}
+\end{center}
+
+\textbf{Sample Predictions: \\ }
+The model was tested on sample images from the dataset. The predicted labels were compared with the true labels, and most of the predictions were correct, showing that the model learned effectively.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{samples.png}
+\end{center}
+
+\section{Discussion}
+The model is able to learn from the dataset, but there are some limitations. The sigmoid activation function can slow down learning because gradients become small.
+
+Training time is also higher because everything is implemented manually. Using better optimizers like Adam or activation functions like ReLU can improve performance.
+
+\section{Conclusion}
+In this project, a neural network was implemented from scratch. This helped in understanding forward propagation, backpropagation, and gradient descent.
+
+The results show that the model can learn effectively when trained properly.
+
+\section{References}
+\begin{enumerate}
+\item Goodfellow, I., Bengio, Y., Courville, A.: Deep Learning. MIT Press (2016)
+\item Nielsen, M.: Neural Networks and Deep Learning (2015)
+\end{enumerate}
+
+\end{document}
