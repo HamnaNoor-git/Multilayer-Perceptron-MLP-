@@ -40,7 +40,6 @@ The model is trained on the MNIST dataset to classify handwritten digits (0–9)
 
 ##  Author
 Name: Hamna Noor
-Roll No: 25i-3113
 FAST NUCES, Islamabad
 
 ## Conclusion
